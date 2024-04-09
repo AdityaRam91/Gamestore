@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "Form": [
+    {
+      "yourname": "sivasiva",
+      "email": "siva@gmail.com",
+      "Address": "Macherla",
+      "mobilenumber": 9010007939,
+      "Password": "#Siva187",
+      "ConfirmPassword": "#Siva187",
+      "id": 2
+    },
+    {
+      "yourname": "sai krishna",
+      "email": "sai@gmail.com",
+      "Address": "Atmakuru",
+      "mobilenumber": 8309995125,
+      "Password": "#Krishna18",
+      "ConfirmPassword": "#Krishna18",
+      "id": 3
+    },
+    {
+      "yourname": "Durga Sai K",
+      "email": "batchudurgasaikrishna@gmail.com",
+      "Address": "2-54,ATMAKURU",
+      "mobilenumber": 8309995125,
+      "Password": "#Krishna18",
+      "ConfirmPassword": "#Krishna18",
+      "id": 4
+    },
+    {
+      "yourname": "Aditya",
+      "email": "maditya@gmail.com",
+      "Address": "sdfghj",
+      "mobilenumber": 9887654321,
+      "Password": "@Aditya123",
+      "ConfirmPassword": "@Aditya123",
+      "id": 5
+    }
+  ]
+}

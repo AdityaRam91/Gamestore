@@ -1,0 +1,67 @@
+<div class="container mt-3" style="border-color: black;
+border-style: solid;border-radius: 5px ; 
+width: 350px;height:auto">
+<p style="font-size: 30px;">Sing in</p>
+    <form #f="ngForm" (submit)="onlogin(f)">
+        <div class="form-area">
+            <div class="form-group">
+                <label>Email or mobile phone number</label>
+                <br>
+                <input type="text" 
+                 placeholder="Email or mobile phone number"
+                 class="form-control"
+                 name="text"
+                
+                 ngModel 
+                 #text="ngModel" 
+
+                 pattern="^(?:\d{10}|\w+@\w+\.\w{2,3})$"
+                 required
+                 >
+                 <a *ngIf="text.errors">
+                    <a style="color: red;" *ngIf="text.touched && text.invalid">text is requried...</a>
+                 </a>
+                 <br>
+                <a *ngIf="text?.errors?.['pattern']">
+                    <a style="color: red;" *ngIf="text.touched && text.invalid">text contain invalid characters ...</a>
+                    </a>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+            <br>
+                <input type="password" 
+                 placeholder="Password" 
+                 class="form-control"
+                 name="Password" 
+                 ngModel 
+                 #Password="ngModel" 
+                 
+                 pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                 required
+                 >
+
+                 <div *ngIf="Password.errors">
+                    <a style="color: red;" *ngIf="Password.touched && Password.invalid">Password is requried...</a>
+                 </div>
+                 <br>
+                <div *ngIf="Password?.errors?.['pattern']">
+                    <a style="color: red;" *ngIf="Password.touched && Password.invalid">Password contain invalid characters ...</a>
+                </div>
+            </div>
+            <button type="submit" class="btn btn primary" 
+            style="margin-left: 0px; background-color: yellow;border-radius: 5px;
+            font-size: small;padding: 2px 3px; width: 300px;" >continue</button>
+            <p style="font-size: small;">By continuing, you agree to gaming's Conditions of Use and Privacy Notice.</p>
+        </div>
+    </form>
+</div>
+<div>
+    <button type="submit" class="btn btn primary" 
+            style=" margin-top: 20px; margin-left: 490px; background-color:white;border-radius: 5px;border-color: black;
+            font-size: small;padding: 2px 3px; width: 300px;" [routerLink]="['/register']" >Create your Gaming Account</button>
+            <p style="text-align: center; color: red;">{{mp}}</p>
+</div>
+
+
+
+

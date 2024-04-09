@@ -1,0 +1,164 @@
+<div >
+
+<div class="box2" style="width: 40%; height: 300px; ">
+        <div style="margin-left: 590px; margin-top: 10px;"><img src="assets/images/th.jpeg" height="50px"></div>
+        <div class="container mt-3"  style="border-color: black;
+        border-style: solid;border-radius: 5px ; 
+        width: 350px;height: auto; margin-left: 470px;">
+            <div class="form-area">
+                <p style="font-size: 30px; margin-top: 5px;">Create Account</p>
+                <form #f="ngForm" (submit)="onregister(f)">
+                    <div class="form-group">
+                        <label>Your name</label>
+                    <br>
+                        <input type="text"
+                         placeholder="First and last name" 
+                         class="form-control"  
+                         name="yourname" 
+                         ngModel
+        
+                         #yourname="ngModel" 
+        
+                         minlength="6"
+                         maxlength="11"
+                         required
+                         >
+        
+                         <div *ngIf="yourname.errors" >
+                            <div style="color: red;" *ngIf="yourname.touched && yourname.invalid">yourname is requried...</div>
+                         </div>
+                         <br>
+                        <div *ngIf="yourname?.errors?.['pattern'] && yourname?.errors?.['minlength']">
+                            <div style="color: red;" *ngIf="yourname.touched && yourname.invalid">yourname invalid ...</div>
+                        </div>
+                        </div>
+        
+                        <div class="form-group">
+                            <label>Email</label>
+                        <br>
+                            <input type="email"
+                             placeholder="Email" 
+                             class="form-control"  
+                             name="email" 
+                             ngModel
+            
+                             #email="ngModel" 
+                            
+                             pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$"
+                            
+                             required
+                             >
+            
+                             <div *ngIf="email.errors" >
+                                <div style="color: red;" *ngIf="email.touched && email.invalid">email is requried...</div>
+                             </div>
+                             <br>
+                            <div *ngIf="email.errors?.['pattern']">
+                                <div style="color: red;" *ngIf="email.touched && email.invalid">email invalid ...</div>
+                            </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label>Address</label>
+                            <br>
+                                <textarea rows="4" cols="50"
+                                 placeholder="Address" 
+                                 class="form-control"  
+                                 name="Address" 
+                                 ngModel
+                
+                                 #Address="ngModel" 
+                                
+                                 
+                                
+                                 required
+                                 >
+                                </textarea>
+                
+                                 <div *ngIf="Address.errors" >
+                                    <div style="color: red;" *ngIf="Address.touched && Address.invalid">Address is requried...</div>
+                                 </div>
+                                </div>
+                    <div class="form-group">
+                        <label>Mobile number</label>
+                    <br>
+                        <input type="number" 
+                         placeholder="Mobile number" 
+                         class="form-control"
+                         name="mobilenumber" 
+                         ngModel #mobilenumber="ngModel" 
+                         minlength="10"
+                         onkeypress="if (this.value.length > 9) return false;"
+                         pattern="[0-9]{10}"
+                         required>
+                         <div *ngIf="mobilenumber.errors" >
+                            <div style="color: red;" *ngIf="mobilenumber.touched && mobilenumber.invalid">mobilenumber is requried...</div>
+                         </div>
+                         <br>
+                        <div *ngIf="mobilenumber?.errors?.['pattern'] && mobilenumber?.errors?.['minlength']">
+                            <div style="color: red;" *ngIf="mobilenumber.touched && mobilenumber.invalid">mobilenumber contain 10 numbers ...</div>
+                        </div>
+        
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                    <br>
+                        <input type="password" 
+                         placeholder="Password" 
+                         class="form-control"
+                         name="Password" 
+                         ngModel #Password="ngModel" 
+                         
+                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                         required
+                         >
+        
+                         <div *ngIf="Password.errors">
+                            <div style="color: red;" *ngIf="Password.touched && Password.invalid">Password is requried...</div>
+                         </div>
+                         <br>
+                        <div *ngIf="Password?.errors?.['pattern']">
+                            <div style="color: red;" *ngIf="Password.touched && Password.invalid">Password contain invalid characters ...</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label> Confirm Password</label>
+                    <br>
+                        <input type="password" 
+                         placeholder="ConfirmPassword" 
+                         class="form-control"
+                         name="ConfirmPassword" 
+                         ngModel 
+                         #ConfirmPassword="ngModel" 
+                         
+                         pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                         required
+                         >
+        
+                         <div *ngIf="ConfirmPassword.errors">
+                            <div style="color: red;" *ngIf="ConfirmPassword.touched && ConfirmPassword.invalid">Confirm Password is requried...</div>
+                         </div>
+                         <br>
+                        <div *ngIf="ConfirmPassword?.errors?.['pattern']">
+                            <div style="color: red;" *ngIf="ConfirmPassword.touched && ConfirmPassword.invalid">Confirm Password contain invalid characters ...</div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; color: red;">{{cp}}</p>
+                    <p style="font-size: small;">Passwords must be at least 6 characters.</p>
+                    <p style="font-size: small;">To verify your number, we will send you a text 
+                        message with a temporary code. Message and data rates may apply.</p>
+                            <button type="submit" class="btn btn primary" style="margin-left: 120px; background-color: yellow;border-radius: 5px;font-size: small;padding: 5px 10px;"  >submit</button>
+                            <p style="text-align: center;color: red;">{{details}}</p>
+                    <p>Already have an account?<a [routerLink]="['/login']">sing in</a></p>
+                </form>
+               
+                
+            </div>
+        
+
+</div>
+
+
+
+</div>
+
