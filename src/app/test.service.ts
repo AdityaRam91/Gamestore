@@ -11,7 +11,9 @@ export class TestService {
   constructor(private _http:HttpClient) { }
 
   loginData:any={};
+  addtocart:any=[];
   person:any=[];
+  count:any=true;
 
   addForm(data:any):Observable<any>{
        return this._http.post(' http://localhost:3000/Form',data);

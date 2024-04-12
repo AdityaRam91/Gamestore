@@ -1,8 +1,7 @@
-<!-- 
-<div style="margin-left:500px; margin-top: 30px; margin-right: 450px; border-color: black; border-radius: 5px ;border-style: solid;">
+<div style="margin-left:500px; margin-top: 30px; margin-right: 400px; border-color: black; border-radius: 5px ;border-style: solid; width: auto ;height: auto;">
     <h1 style="background-color: blue; height: 60px;">Profile</h1>
     <div class="mb-3 row">
-    <label class="col-sm col-form-label" style="margin-left: 30px;">Yourname:{{yourname}}</label>
+    <label class="col-sm col-form-label" style="margin-left: 30px;">Yourname:{{yournamee}}</label>
     
   </div>
   <div class="mb-3 row">
@@ -16,9 +15,57 @@
   <div class="mb-3 row">
     <label class="col-sm col-form-label" style="margin-left: 30px;">Email:{{email}}</label>
   </div>
-  <button style="display:inline; margin-left: 30px; width: 110px; background-color: blue;">Edit</button>
-  <button style="margin-left: 10px; width: 100px; background-color: red;">Delete</button>
+  <button (click)="EditForm() "style="display:inline; margin-left: 30px; width: 110px; background-color: blue;">Edit</button>
+  <button (click)="deleteData()" style="margin-left: 10px; width: 100px; background-color: red;">Delete</button>
+  <button (click)="loginout()" style="margin-left: 10px; width: 100px; background-color: red;">logout</button>
+<br>
+<br>
   </div>
 
-   -->
+
+  <div>
+  <div class="form-warpper" *ngIf="showForm">
+      <div class="EditForm">
+          <h2 >Edit</h2>
+          <div class="group">
+              <label>Yourname</label>
+              <br>
+              <input type="text" class="form-control" [(ngModel)]="Ename" name="name" required >
+          </div>
+          <div class="group">
+              <label>Email</label>
+              <br>
+              <input type="email" class="form-control" [(ngModel)]="Eemail" name="email" required>
+          </div>
+          <div class="group">
+              <label>Address</label>
+              <br>
+              <textarea type="text" class="form-control" [(ngModel)]="EAddress" name="Address" required></textarea>
+          </div>
+          <div class="group">
+              <label>Mobilenumber</label>
+              <br>
+              <input type="number" class="form-control" [(ngModel)]="Emobilenumber" name="mobilenumber" required>
+          </div>
+          <div class="group">
+              <label>Password</label>
+              <br>
+              <input type="password" class="form-control" [(ngModel)]="EPassword" name="Password" required>
+          </div>
+          <div class="group">
+              <label>ConfirmPassword</label>
+              <br>
+              <input type="password" class="form-control" [(ngModel)]="EConfirmPassword" name="ConfirmPassword" required>
+          </div>
+          <div class="action">
+              <button class="btn btn-primary" (click)="savebutton()">Save Changes</button>
+              <button class="btn btn-danger" (click)="closeForm()">closeForm</button>
+          </div>
+          
+          
+      </div>
+  
+  </div>
+  </div>
+
 

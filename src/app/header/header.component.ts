@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { TestService } from '../test.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit{
+  // count:boolean=false;
+  constructor(private router: Router,private ts:TestService) {  }
 
-  constructor(private router: Router) {  }
-
+  
   ngOnInit(): void { }
 
   style:object={
@@ -19,11 +20,23 @@ export class HeaderComponent implements OnInit{
   }
 
   register(){
-   let link=['/register'];
-   this.router.navigate(link);
+    if(this.ts.count){
+      let link=['/register'];
+      this.router.navigate(link);
+      this.ts.count=false
+    }
+    else{
+      alert("you logged in");
+    }
+   
   }
   profile(){
     let link=['/profile'];
+   this.router.navigate(link);
+  }
+
+  cart(){
+    let link=['/cart'];
    this.router.navigate(link);
   }
 

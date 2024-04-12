@@ -12,19 +12,19 @@
 <div class="collapse navbar-collapse" id="navbarNavDropdown" style="max-width:195; height:40px;">
     <ul class="navbar-nav" style="height: 52px;">
     
-      <li class="nav-item dropdown" style="margin-left: 1000px;">
+      <li class="nav-item dropdown" style="margin-left: 800px;">
+        <button (click)="cart()" [style]="style"><img src="assets/images/cart.png" height="60px" width="100"/></button>
+        
+      </li>
+      <li class="nav-item dropdown" >
         <button (click)="register()" [style]="style"><img src="assets/images/Accounts.png" height="60px" width="150"/></button>
-        <!-- <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul> -->
+        
+      </li>
+      <li class="nav-item dropdown" >
+        <button (click)="profile()" [style]="style"><img src="assets/images/Profile.png" height="60px" width="70"/></button>
+        
       </li>
       
-      <!-- <li class="nav-item">
-        <button (click)="profile()" [style]="style"><img src="assets/images/Profile.png" height="50px" width="50"/></button>
-        <a class="nav-link"  style="color:'white'" href="#"></a>
-      </li> -->
     </ul>
 </div>
 </nav>

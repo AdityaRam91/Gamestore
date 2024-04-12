@@ -1,2 +1,20 @@
-<h2 style="text-align: center;">Thanks for your Intrest</h2>
-<button (click)="order()" style="margin-left: 600px;">Place Order</button>
+<div class="box1" style="width: auto; height: auto; float: left; margin-top: 10px;margin-left: 500px; ">
+    <table border="2px solid black" class="table" style="width: auto;">
+        <thead>
+        <tr>
+            <th rowspan="2">Order now</th>
+            <!-- <th>description</th> -->
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let formdata of data">
+        <td>{{formdata['title']}}</td>
+        <td>{{formdata['description']}}</td>
+        <td ><button style="background-color: blue;" (click)="Placeorder()">placeorder</button></td>
+        <!-- <td ><button style="background-color: blue;" (click)="EditForm(formdata)">Edit</button></td>
+        <td><button style="background-color: red;" (click)="deleteData(formdata['id'])">Delete</button></td> -->
+    </tr>
+    </tbody>
+    </table>
+</div>
